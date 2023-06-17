@@ -1,0 +1,115 @@
+.body{
+    background: black;
+}
+
+.navbarwarna{
+    background-color: rgb(0, 0, 0);
+}
+
+.navbarrr{
+    /* Your regular styles here */
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .navbarrr.scrolled {
+    background-color: #951d1d; /* Apply the desired background color */
+    box-shadow: 0 2px 4px rgba(185, 16, 16, 0.2); /* Apply the desired box shadow */
+  }
+
+
+.logo img{
+ margin-right: 5px;
+}
+
+a.logo{
+    color: rgb(192, 192, 72);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:700;
+}
+
+.carouselImg img{
+    height: 100vh;
+}
+
+.carousell{
+    height: 100vh;
+}
+
+.content{
+    align-content: center;
+}
+
+.card{
+	height: auto;
+}
+
+.card-img-top{
+    height: auto;
+	max-height: 90vh;
+}
+
+.cardvid{
+	height: auto;
+	max-height: 90vh;
+
+}
+
+.slider{
+	height: auto;
+	width: auto;
+	/* margin: auto;
+	position: relative; */
+	/* display: grid; */
+	place-items: center;
+	overflow: hidden;
+	
+}
+
+.slide-track{
+	display: flex;
+	width: calc(250px * 150);
+	animation: scroll 1000s linear infinite;
+	
+}
+.slide-track:hover{
+	animation-play-state: paused;
+}
+
+@keyframes scroll{
+	0%{
+		transform: translateX(0);
+	}
+	100%{
+		transform: translateX(calc(-250px * 150));
+	}
+}
+
+.slideee{
+	height: 350px;
+	width: 500px;
+	display: flex;
+	align-items: center;
+	margin-left: 12px;
+    margin-right: 12px;
+	perspective: 100px;
+	
+}
+
+.imgslide{
+	width: 500px;
+    height: 300px;
+	transition: transform 0.5s;
+    display: inline;
+}
+
+
+.imgslide:hover{
+	transform: translateZ(8px);
+    
+}
+
+.judul{
+    margin-top: 15px;
+    color: white;
+}
+
