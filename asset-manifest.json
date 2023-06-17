@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/biosaka-react/static/css/main.0c5cfa02.css",
+    "main.js": "/biosaka-react/static/js/main.8f939629.js",
+    "static/js/787.66b477fd.chunk.js": "/biosaka-react/static/js/787.66b477fd.chunk.js",
+    "static/media/c3.jpeg": "/biosaka-react/static/media/c3.dce4d028338673bbde70.jpeg",
+    "static/media/c6.jpeg": "/biosaka-react/static/media/c6.4b7c8dfeddd633e6304c.jpeg",
+    "static/media/c4.jpeg": "/biosaka-react/static/media/c4.89179c1ee723a6c1a833.jpeg",
+    "static/media/c5.jpeg": "/biosaka-react/static/media/c5.c65f200ad55795aef0dc.jpeg",
+    "static/media/c1.jpeg": "/biosaka-react/static/media/c1.2489c66e2e5701bbea93.jpeg",
+    "static/media/c7.jpeg": "/biosaka-react/static/media/c7.0e09ceaef3949af475c5.jpeg",
+    "static/media/c2.jpeg": "/biosaka-react/static/media/c2.e4931ebe883f80c0ecfd.jpeg",
+    "index.html": "/biosaka-react/index.html",
+    "main.0c5cfa02.css.map": "/biosaka-react/static/css/main.0c5cfa02.css.map",
+    "main.8f939629.js.map": "/biosaka-react/static/js/main.8f939629.js.map",
+    "787.66b477fd.chunk.js.map": "/biosaka-react/static/js/787.66b477fd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c5cfa02.css",
+    "static/js/main.8f939629.js"
+  ]
+}
