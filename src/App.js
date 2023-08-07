@@ -2,11 +2,12 @@ import './App.css';
 import NavigationBar from './components/NavigationBar';
 import Content from './components/Content';
 import "./style/landingPage.css"
-import { KontenKiri, KontenKanan } from './components/Isi';
+import { KontenKiri, KontenKanan, NewComponent} from './components/Isi';
 import CardSlider from './components/CardSlider';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Col } from 'react-bootstrap';
+
 
 
 
@@ -23,11 +24,12 @@ function App() {
             </div>
       <Container>
             <Row className='content'>
-            <Col md={6} className='mt-2 kiri'>
-      <KontenKiri />
+            <Col md={6} className='mt-2 kiri' id='card'>
+      {/* <KontenKiri /> */}
+      <NewComponent />
             </Col> 
             <Col md={6} className='mt-2 kanan'>
-      <KontenKanan />
+      {/* <KontenKanan /> */}
             </Col>
             </Row>
             </Container>

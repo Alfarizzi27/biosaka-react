@@ -1,13 +1,64 @@
 import axios from "axios"
 import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
-
+// import $ from 'jquery'
+// import InfiniteScroll from "react-infinite-scroll-component";
 
 export const KontenKiri = () => {
     const [contenList, setContentList] = useState([])
     useEffect(() => {
         const GetContentList = async () => {
-            const content = await axios.get(process.env.REACT_APP_BASE_URL)
+            const content = await axios.get('https://apps.tanamanpangan.pertanian.go.id/api/whatsapp/index.php?q=media_random')
+            return content
+        }
+        GetContentList().then(response => {
+            setContentList(response.data)
+        })
+    }, [])
+
+    let a = 1
+    let b = 2
+    return (
+        contenList.map((datas, i) => {
+            if (a <= b && datas.TYPE === 'image') {
+                a++;
+                return (
+                    <Card className="mt-3" key={i}>
+                        <Card.Img variant="top" src={datas.NOTE} />
+                        <Card.Body>
+                            <Card.Title>Dokumentasi Foto Biosaka</Card.Title>
+                            <Card.Text>{datas.MESSAGE}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                );
+            }
+            return null
+        })
+    );
+}
+
+export const NewComponent = () => {
+    const [newDivCount, setNewDivCount] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            let scrollable = (document.documentElement.scrollHeight - window.innerHeight) - 100;
+            let scrolltop = window.scrollY
+
+            if (Math.ceil(scrolltop) >= scrollable) {
+                setNewDivCount(prevCount => prevCount + 1);
+                console.log(scrollable)
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const [contenList, setContentList] = useState([])
+    useEffect(() => {
+        const GetContentList = async () => {
+            const content = await axios.get('https://apps.tanamanpangan.pertanian.go.id/api/whatsapp/index.php?q=media_random')
             return content
         }
         GetContentList().then(response => {
@@ -16,27 +67,32 @@ export const KontenKiri = () => {
     }, [])
 
     let a = 0
-    return (
-        contenList.map((datas, i) => {
+    let b = 2
 
-            if (a <= 8 && datas.TYPE === 'image') {
-                a++
-                return (
-                    <Card className="mt-3" key={i}>
-                        <Card.Img variant="top" src={datas.NOTE} />
-                        <Card.Body>
-                            <Card.Title>Dokumentasi Foto Biosaka</Card.Title>
-                            <Card.Text>
-                                {datas.MESSAGE}
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                )
-            }
-            return null
-        })
-    )
+    return (
+        <div className="container">
+            {Array.from({ length: newDivCount }, (_, index) => (
+                contenList.map((datas, i) => {
+                    if (a <= b && datas.TYPE === 'image') {
+                        a++;
+                        return (
+                            <Card className="mt-3" key={index}>
+                                <Card.Img variant="top" src={datas.NOTE} />
+                                <Card.Body>
+                                    <Card.Title>Dokumentasi Foto Biosaka</Card.Title>
+                                    <Card.Text>{datas.MESSAGE}</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        )
+                    }
+                })
+            ))}
+        </div>
+    );
 }
+
+
+
 
 export const KontenKanan = () => {
     const [contenList, setContentList] = useState([])
@@ -74,31 +130,6 @@ export const KontenKanan = () => {
     )
 }
 
-
-
-
-
-// const Isi = () => {
-//     // const [data, setDatas] = useState([])
-//     // useEffect(() => {
-//     //     axios.get('https://apps.tanamanpangan.pertanian.go.id/api/whatsapp/index.php?q=media_random')
-//     //     .then(response => response.json)
-//     //     .then(response => console.log(response))
-//     // },[])
-//     // let count = 0
-//     // fetch('https://apps.tanamanpangan.pertanian.go.id/api/whatsapp/index.php?q=media_random')
-//     //     .then(response => response.json())
-//     //     .then(response => {
-//     //         response.forEach(element => {
-//     //             if (count < 5 && element.TYPE === 'image') {
-//     //                 console.log(element)
-//     //                 console.log(count)
-//     //                 count++
-//     //             }
-
-//     //         });
-//     //     })
-
 // const slicedData = contenList.slice(0, 5)
     // let count = 0
     // return (
@@ -110,4 +141,44 @@ export const KontenKanan = () => {
     //         count++
     //     }
     // })
+    // )
+
+    // window.addEventListener("scroll", () => {
+
+    //     let scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    //     let scrolltop = window.scrollY
+
+    //     if (Math.ceil(scrolltop) === scrollable) {
+    //         let a = 0
+    //         return (
+    //             contenList.map((datas, i) => {
+    //                 if (a <= 8 && datas.TYPE === 'image') {
+    //                     a++;
+    //                     return (
+    //                        b = 16
+    //                     );
+    //                 }
+    //                 return null
+    //             })
+    //         );
+    //     }
+    // })
+
+       // const [data, setData] = useState(Array.from({length:20}))
+    // const [hasMore, setHasMore] = useState(true)
+    // const fetchMoreData = () =>{
+    //     setTimeout(() =>{
+    //         setData(data.concat(Array.from({length:5})))
+    //     },500)
+    // }
+    // return(
+    //     <InfiniteScroll dataLength={data.length} next={fetchMoreData} hasMore={hasMore}>
+
+    //     {data.map((item,index)=>{
+    //         return (
+    //         // <div style={stylee} key={index}>This is array {index + 1}</div>
+    //         console.log(data)
+    //         )
+    //     })}
+    //     </InfiniteScroll>
     // )
